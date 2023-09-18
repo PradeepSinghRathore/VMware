@@ -1,0 +1,12 @@
+---
+- name: Gather facts about 
+  hosts: localhost
+  tasks:
+    - name: Gather info from standalone ESXi server having datacenter as 'ha-datacenter'
+      vmware_guest_info:
+        hostname: CDG-VCENTER.hsilab.com
+        username: administrator@vsphere.local
+        password: T!g3r@Ind!A
+        datacenter: HSILAB
+        validate_certs: no
+        name: test_vm_0001 

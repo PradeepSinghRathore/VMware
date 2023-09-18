@@ -1,0 +1,17 @@
+---
+- name: Manage snapshots in Vcenter
+  hosts: localhost
+  tasks:
+    - name: Create a new snapshots of VM in Vcenter 
+      vmware_guest_snapshot:
+        hostname: CDG-VCENTER.hsilab.com
+        username: administrator@vsphere.local
+        password: T!g3r@Ind!A
+        datacenter: HSILAB
+        name: CDG-NEW-ANSIBLE
+        folder: Ansible
+        state: present
+        snapshot_name: snap2
+        description: snap1_description
+
+

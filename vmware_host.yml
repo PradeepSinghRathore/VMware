@@ -1,0 +1,15 @@
+---
+- name: create a new vmware exsi host
+  hosts: localhost
+  tasks:
+    - name: Add ESXi Host to vCenter
+      vmware_host:
+        hostname: CDG-VCENTER.hsilab.com
+        username: administrator@vsphere.local
+        password: T!g3r@Ind!A 
+        datacenter_name: HSILAB
+        cluster_name: HSILAB_ESXICLUST01
+        esxi_hostname: CDG-VCENTER1.hsilab
+        esxi_username: ocp1@vsphere.local
+        esxi_password: Hitachi@123
+        state: present

@@ -1,0 +1,17 @@
+---
+- name: create a new cluster 
+  hosts: localhost
+  tasks:
+    - name:  create a new cluster
+      vmware_cluster:
+        hostname: CDG-VCENTER.hsilab.com
+        username: administrator@vsphere.local
+        password: T!g3r@Ind!A
+        datacenter: HSILAB
+        validate_certs: no
+        cluster_name: HSILAB_ESXICLUSTER02
+        enable_ha: yes
+        enable_drs: yes
+        enable_vsan: yes
+
+       

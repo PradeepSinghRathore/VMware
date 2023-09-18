@@ -1,0 +1,12 @@
+---
+- name: Power on / Power off / Restart a virtual machine
+  hosts: localhost
+  tasks:
+    - name: Power on / Power off / Restart a virtual machine
+      vmware_guest_powerstate:
+        hostname: 192.168.100.202
+        username: root
+        password: T!g3r@Ind!A
+        folder: Ansible
+        name: Rajendra_Sir
+        state: powered-on

@@ -1,0 +1,23 @@
+
+# Global Settings
+- vcenter_server: 192.168.100.200
+- vcenter_user: administrator@vsphere.local
+- vcenter_pass: T!g3r@Ind!A
+- datacenter: HSILAB01  
+- cluster: HSILAB_ESXICLUSTER01
+
+# ESXi settings
+- esxi_hostname: 192.168.100.212
+- esxi_username: root
+- esxi_password: T!g3r@Ind!A
+
+# VM settings
+- vm_name: VM_168
+- template_name: ubuntu_t
+- datastore: Local Datastore 1
+- network: VM Network
+- folder: /Asia-Datacenter1/vm/
+- dns_server: 8.8.8.8
+
+# Snapshot settings
+- snapshot: fresh_installation

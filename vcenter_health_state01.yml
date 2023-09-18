@@ -1,0 +1,12 @@
+--- #MY PLAYBOOK
+- hosts: Vcenter 
+
+  tasks:
+    - name: Get the list of the monitored items
+      community.vmware.vmware_vsan_health_info:
+        validate_certs: no
+        hostname: 192.168.100.200
+        username: "{{ vcenter_user }}"
+        password: "{{ vcenter_pass }}"
+        cluster_name: 
+      register: result

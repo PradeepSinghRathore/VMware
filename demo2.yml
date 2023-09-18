@@ -1,0 +1,27 @@
+- hosts: localhost
+  gather_facts: no
+  vars_files:
+    - vcenter_vars.yml
+
+  tasks:
+    - name: Gather vmware host facts from vCenter
+      community.vmware.vmware_cluster_info:
+        hostname: '{{ vcenter_hostname }}'
+        username: '{{ vcenter_username }}'
+        password: '{{ vcenter_password }}'
+        datacenter: "{{ datacenter }}"
+        schema: vsphere
+        properties:
+          - name
+      register: clusternames
+
+    # - name: Write results to a local file
+    #   copy:
+    #     content: "{{ clusternames.clusters | to_yaml }}"
+    #     dest: "clusternames.yml"
+
+    - name: Finish
+      debug:
+        msg: "{{ clusternames.clusters | to_yaml }}"    
+
+
